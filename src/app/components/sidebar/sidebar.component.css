@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .nav-links {
+        @apply h-[50px] mt-[20px] list-none flex items-center hover:bg-[#01458e] hover:text-[#fff] rounded-lg;
+        transition: all 0.4s ease;
+    }
+    
+    a {
+        @apply normal-case h-full flex items-center;
+    }
+    
+    .nav-text {
+        /* Define your custom styles here if needed */
+    }
+
+    .text {
+        @apply nav-text text-[1.2rem];
+    }
+}

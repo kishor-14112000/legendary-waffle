@@ -1,1 +1,38 @@
-<p>sidebar works!</p>
+<div class="main-class h-screen bg-[#E4E9F7]">
+    <div class="sidebar-class fixed top-0 left-0 h-full w-[280px] bg-[#fff] p-2.5">
+        <div class="header-class relative">
+            <div class="image-text flex items-center gap-2.5">
+                <span class="image bg-[#01458e] rounded-[12px]">
+                    <img [src]="company_logo" alt="Company_logo" class="w-[3.5rem] rounded-md p-2.5">
+                </span>
+
+                <div class="text header-text text-[18px] flex flex-col font-medium tracking-wide">
+                    <span class="name">
+                        Account's
+                    </span>
+                    <span class="profession">
+                        Company Name
+                    </span>
+                </div>
+            </div>
+            <div class="h-[50px] mt-[20px] list-none flex items-center hover:bg-[#01458e] hover:text-[#fff] rounded-lg">
+                <i class="pi pi-angle-right text-[1.4rem] text-[#fff] flex items-center justify-center absolute top-1/2 -right-6 transform -translate-y-1/2 h-[26px] w-[26px] bg-indigo-500 rounded-[50%] cursor-pointer"></i>
+            </div>
+        </div>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-links">
+                        <a href="#">
+                            <i class="pi pi-home" style="font-size: 1.2rem; min-width: 60px; display: flex; align-items: center; justify-content: center;"></i>
+                            <span class="text">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
