@@ -30,17 +30,29 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/assets/images/logo_image.jpeg",
-              "src/assets"
-            ],
             "styles": [
               "node_modules/primeicons/primeicons.css",
               "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
               "node_modules/primeng/resources/primeng.min.css",
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/vendor/bootstrap/css/bootstrap.min.css",
+              "src/assets/vendor/bootstrap-icons/bootstrap-icons.css", 
+              "src/assets/vendor/boxicons/css/boxicons.min.css",
+              "src/assets/vendor/quill/quill.snow.css",
+              "src/assets/vendor/quill/quill.bubble.css",
+              "src/assets/vendor/remixicon/remixicon.css",
+              "src/assets/vendor/simple-datatables/style.css", 
+              "src/assets/vendor/bootstrap/css/bootstrap.min.css"
             ],
             "scripts": [
+              "src/assets/vendor/apexcharts/apexcharts.min.js",
+              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/vendor/chart.js/chart.umd.js",
+              "src/assets/vendor/echarts/echarts.min.js",
+              "src/assets/vendor/quill/quill.js",
+              "src/assets/vendor/simple-datatables/simple-datatables.js",
+              "src/assets/vendor/tinymce/tinymce.min.js",
+              "src/assets/vendor/php-email-form/validate.js"
             ],
             "server": "src/main.server.ts",
             "prerender": true,
