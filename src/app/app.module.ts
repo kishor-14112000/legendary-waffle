@@ -37,8 +37,8 @@ import { DaybookComponent } from './components/daybook/daybook.component';
 import { CashBookComponent } from './components/cash-book/cash-book.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { LedgerComponent } from './components/ledger/ledger.component';
-import { BankBookComponent } from './components/bank-book/bank-book.component';
 import { MaintainDocsComponent } from './components/maintain-docs/maintain-docs.component';
+import { BankBookComponent } from './components/bank-book/bank-book.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +55,12 @@ import { MaintainDocsComponent } from './components/maintain-docs/maintain-docs.
     PaymentComponent,
     LedgerComponent,
     BankBookComponent,
-    MaintainDocsComponent
+    MaintainDocsComponent,
+    DaybookComponent,
+    CashBookComponent,
+    BankBookComponent,
+    PaymentComponent,
+    LedgerComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +81,7 @@ import { MaintainDocsComponent } from './components/maintain-docs/maintain-docs.
     TableModule,
     DialogModule,
     IconFieldModule,
-    InputIconModule
+    InputIconModule,
   ],
   exports: [
     BrowserModule,
