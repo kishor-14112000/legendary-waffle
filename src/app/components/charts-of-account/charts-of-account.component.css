@@ -1,0 +1,108 @@
+.header-button{
+    border-radius: 50px;
+    size: 10%;
+}
+
+
+
+/* account.component.css */
+.form-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width:25%;
+    margin-left: 30%;
+  }
+  
+  .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .close-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .horizontal-line {
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+  }
+  
+  .form-row {
+    margin-bottom: 10px;
+  }
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+
+  .custom_button{
+    border: 1px solid grey ;
+    border-radius: 4px;
+    padding:4px;
+  }
+
+  .c_blue{
+    background-color:#3b82f6
+  }
+
+  .c_sblue{
+    background-color:#34a5e9
+  }
+
+  .c_purple{
+    background-color:#a855f7
+  }
+
+  .c_red{
+    background-color: #fa2200
+  }
+
+  .br-1{
+    border:1px solid black;
+    
+  }
+
+  .p-dropdown{
+    border: 1px solid black;
+    border-radius: 6px;
+    margin-left: 20px;
+  }
+
+  .pInputText{
+    width: 124px;
+    margin-top: 10px;
+    justify-content: center;
+    display: flex;
+    border: 1px solid lightsteelblue;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Adjust opacity as needed */
+  z-index: 999; /* Ensure it is above other content */
+}
+
+.card2 {
+  position: relative; /* Ensure the dialog appears above the overlay */
+  z-index: 1000; 
+}
+
+
+
+
+  
+
+  

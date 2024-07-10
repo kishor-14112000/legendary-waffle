@@ -1,0 +1,108 @@
+<div>
+    <div class="header-button" style="display: flex; justify-content: right; gap: 8px; border-radius: 50px; margin-bottom: 20px;">
+      <p-button 
+            [icon]="isExpanded ? 'pi pi-minus' : 'pi pi-plus'" 
+            [label]="isExpanded ? 'Collapse All' : 'Expand All'" 
+            (click)="toggleExpandCollapse()" 
+            class="mr-2 custom_button">
+        </p-button>
+        <p-button label="Add New" icon="pi pi-plus" (click)="showDialog()" class="mr-2 custom_button c_blue"></p-button>
+        <p-button label="Edit" severity="info" icon="pi pi-pencil" class="mr-2 custom_button c_sblue"></p-button>
+         <p-button label="Ledger" severity="help" icon="pi pi-calculator" class="mr-2 custom_button c_purple"></p-button>
+        <p-button label="Delete" severity="danger" icon="pi pi-trash" class="mr-2 custom_button c_red"></p-button>
+    </div>    
+    <div class="card">  
+        <p-toast /> 
+        <p-treeTable #tt [value]="files" [columns]="cols" selectionMode="single" [(selection)]="selectedNode"
+            dataKey="name" (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeSelect($event)"
+            [scrollable]="true" [tableStyle]="{'min-width':'50rem'}" styleClass="p-treetable-gridlines">    
+            <ng-template pTemplate="header"let-columns>
+                
+                <tr>
+                    <th *ngFor="let col of columns" [ttSortableColumn]="col.field">
+                        {{ col.header }}
+                        
+                        
+                        <p-treeTableSortIcon [field]="col.field" />
+                        <!-- <input type="text" pInputText (input)="tt.filter($event.target.value, col.field, 'contains')" placeholder="Search"/> -->
+                        <p-iconField iconPosition="left">
+                            <input type="text" pInputText placeholder='' style="display:flex"/>
+                        </p-iconField>
+                        <!-- <input type="text" pInputText style="display:flex" /> -->
+                    
+                    </th>
+                </tr>
+                
+            </ng-template>
+            <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+                <tr [ttRow]="rowNode" [ttSelectableRow]="rowNode">
+                    <td *ngFor="let col of columns; let i = index">
+                        <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0" />
+                        {{ rowData[col.field] }}
+                    </td>
+                </tr>
+            </ng-template>
+            
+        </p-treeTable>
+    </div>
+</div>
+<div *ngIf="visible" class="overlay"></div>
+<div class="card2 flex justify-content-center">
+  <p-dialog header="Add Account/Group" [(visible)]="visible" [style]="{ width: '25rem' }">
+    <span class="p-text-secondary block mb-5">Update your information.</span>
+    <div class="flex align-items-center gap-3 mb-5">
+      <label for="Create" class="font-semibold w-5rem">Create</label>
+      <p-dropdown 
+        formControlName="selectedForm" 
+        [options]="forms" 
+        optionLabel="name" 
+        placeholder="Account" 
+        (onChange)="onFormChange($event)">
+      </p-dropdown>
+    </div>
+
+    <div *ngIf="selectedForm === 'AC'">
+      <div class="flex align-items-center gap-3 mb-5">
+        <label for="Main Account" class="font-semibold w-6rem">Main Account</label>
+        <input pInputText id="mainAccount" class="flex-auto br-1" autocomplete="off" />
+      </div>
+      <div class="flex align-items-center gap-3 mb-5">
+        <label for="Account Type" class="font-semibold w-6rem">Account Type</label>
+        <input pInputText id="accountType" class="flex-auto br-1" autocomplete="off" />
+      </div>
+      <div class="flex align-items-center gap-3 mb-5">
+        <label for="Transactions" class="font-semibold w-6rem">Transactions</label>
+        <input pInputText id="transactions" class="flex-auto br-1" autocomplete="off" />
+      </div>
+      <div class="flex align-items-center gap-3 mb-5">
+        <label for="Opening type" class="font-semibold w-6rem">Opening Type</label>
+        <input pInputText id="openingType" class="flex-auto br-1" autocomplete="off" />
+      </div>
+    </div>
+
+    <div *ngIf="selectedForm === 'GR'">
+        <div class="flex align-items-center gap-3 mb-5">
+          <label for="Main Account" class="font-semibold w-6rem">Main Account</label>
+          <input pInputText formControlName="mainAccount" class="flex-auto br-1" autocomplete="off" />
+        </div>
+        <div class="flex align-items-center gap-3 mb-5">
+          <label for="Account Type" class="font-semibold w-6rem">Account Type</label>
+          <input pInputText formControlName="accountType" class="flex-auto br-1" autocomplete="off" />
+        </div>
+      </div>
+  
+      <div class="flex justify-content-end gap-2">
+        <p-button label="Add and Continue" (click)="visible = false" />
+        <p-button label="Add" (click)="visible = false" />
+      </div>
+    </p-dialog>
+  </div>
+
+
+
+
+
+
+
+
+
