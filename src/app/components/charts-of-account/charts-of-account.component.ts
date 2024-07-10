@@ -84,7 +84,6 @@ export class ChartsOfAccountComponent implements OnInit{
   ngOnInit() {
     
     this.dataService.getFilesystem().then((files) => (this.files = files));
-    console.log(this.files,'hello', 'hai')
     this.cols = [
       { field: 'name', header: 'Account' },
       { field: 'size', header: 'Type' },

@@ -53,7 +53,6 @@ export class SdNarrationComponent implements OnInit {
   ngOnInit() {
     
     this.dataService.getFilesystem().then((files) => (this.files = files));
-    console.log(this.files,'hello')
     this.cols = [
       { field: 'name', header: 'Account' },
       { field: 'size', header: 'Type' },
@@ -62,13 +61,6 @@ export class SdNarrationComponent implements OnInit {
       { field: 'credit', header: 'Credit' },
     ];
   }
-  
-
-
-
-
-
-
 
   toggleExpandCollapse() {
     this.isExpanded = !this.isExpanded;

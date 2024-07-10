@@ -47,7 +47,6 @@
             "scripts": [
               "src/assets/vendor/apexcharts/apexcharts.min.js",
               "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
-              "src/assets/vendor/chart.js/chart.umd.js",
               "src/assets/vendor/echarts/echarts.min.js",
               "src/assets/vendor/quill/quill.js",
               "src/assets/vendor/simple-datatables/simple-datatables.js",
@@ -65,13 +64,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "2.5mb"
+                  "maximumWarning": "10mb",
+                  "maximumError": "15.5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "10kb",
-                  "maximumError": "20kb"
+                  "maximumWarning": "50kb",
+                  "maximumError": "80kb"
                 }
               ],
               "outputHashing": "all"
