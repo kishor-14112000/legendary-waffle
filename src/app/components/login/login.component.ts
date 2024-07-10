@@ -20,7 +20,7 @@ interface City {
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.less']
 })
 export class LoginComponent implements OnInit {
   public company_logo = company_logo; // Company logo image
