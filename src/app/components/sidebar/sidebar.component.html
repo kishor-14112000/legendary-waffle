@@ -1,0 +1,262 @@
+<div>
+    <header id="header" class="header fixed-top d-flex align-items-center">
+        <div class="d-flex align-items-center justify-content-between">
+            <a routerLink="/sidebar" class="logo d-flex align-items-center">
+                <div class="logo_image"><img src="assets/images/logo_image.jpeg" alt=""></div>
+                <span class="title d-none d-lg-block">Account's Package</span>
+                <i class="bi bi-list toggle-sidebar-btn" (click)="toggleSidebar()"></i>
+            </a>
+            <!-- Bind click event to toggle the sidebar -->
+            <!-- <i class="bi bi-list toggle-sidebar-btn" (click)="toggleSidebar()"></i> -->
+        </div>
+
+        <div class="search-bar">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div><!-- End Search Bar -->
+        <div class="card flex justify-content-center">
+            <form [formGroup]="formGroup">
+                <p-dropdown [options]="cities" optionLabel="name" class="forms" formControlName="selectedCity"
+                    placeholder="CY 2023-2024">
+                </p-dropdown>
+            </form>
+        </div>
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
+                    </a>
+                </li><!-- End Search Icon-->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-bell"></i>
+                        <span class="badge bg-primary badge-number">4</span>
+                    </a><!-- End Notification Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                        <li class="dropdown-header">
+                            You have 4 new notifications
+                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-exclamation-circle text-warning"></i>
+                            <div>
+                                <h4>Lorem Ipsum</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>30 min. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-x-circle text-danger"></i>
+                            <div>
+                                <h4>Atque rerum nesciunt</h4>
+                                <p>Quae dolorem earum veritatis oditseno</p>
+                                <p>1 hr. ago</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="#">Show all notifications</a>
+                        </li>
+
+                    </ul><!-- End Notification Dropdown Items -->
+
+                </li>
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img [src]="personGif" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2">Ram Kumar</span>
+                    </a><!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>Account Project</h6>
+                            <span>Developed by simbu and co.</span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Account Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                                <i class="bi bi-question-circle"></i>
+                                <span>Need Help?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <div class="sidebar" [ngClass]="{'active': isSidebarActive}">
+        <div class="top">
+            <!-- <div class="logo">
+                <img src="assets/img/logo.png" alt="">
+                <span class="d-none d-lg-block">Account's Package</span>
+            </div> -->
+            
+        </div>
+        <ul>
+            <li (click)="setActiveComponent('dashboard','Dashboard')">
+                <a routerLink="/Dashboard" routerLinkActive="active">
+                    <i class="bi bi-grid"></i>
+                    <span class="nav-item">Dashboard</span>
+                    <span class="my-tooltip">Dashboard</span>
+                </a>
+
+            </li> 
+            <li (click)="setActiveComponent('chartsOfAccount','Charts of Accounts')">
+                <a routerLink="/Charts-of-account" routerLinkActive="active">
+                    <i class="bi bi-grid"></i>
+                    <span class="nav-item">Charts of Accounts</span>
+                    <span class="my-tooltip">Charts of Accounts</span>
+                </a>
+
+            </li>
+            <li (click)="setActiveComponent('sd-narration', 'Standard Narration')">
+                <a routerLink="/sd-narration" routerLinkActive="active">
+                    <i class="bi bi-question-circle"></i>
+                    <span class="nav-item">Standard Narration</span>
+                    <span class="my-tooltip">Standard Narration</span>
+                </a>
+                
+            </li>
+            <li (click)="setActiveComponent('maintain-docs', 'Maintain Documents')">
+                <a routerLink="/Maintain-docs" routerLinkActive="active">
+                    <i class="bi bi-envelope"></i>
+                    <span class="nav-item">Maintain Documents</span>
+                    <span class="my-tooltip">Maintain Documents</span>
+                </a>
+
+            </li>
+            <li (click)="setActiveComponent('day-book', 'Day Book')">
+                <a routerLink="/Daybook" routerLinkActive="active">
+                    <i class="bi bi-card-list"></i>
+                    <span class="nav-item">Day Book</span>
+
+                </a>
+                <span class="my-tooltip">Day Book</span>
+            </li>
+            <li (click)="setActiveComponent('cash-book', 'Cash Book')">
+                <a routerLink="/Cash-book" routerLinkActive="active">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span class="nav-item">Cash Book</span>
+                    <span class="my-tooltip">Cash Book</span>
+                </a>
+
+            </li>
+            <li (click)="setActiveComponent('bank-book', 'Bank Book')">
+                <a routerLink="/Bank-book" routerLinkActive="active" >
+                    <i class="pi pi-book"></i>
+                    <span class="nav-item">Bank Book</span>
+                    <span class="my-tooltip">Bank Book</span>
+                </a>
+
+            </li>
+            <li (click)="setActiveComponent('payment', 'Receipt and Payment')">
+                <a routerLink="/Payment" routerLinkActive="active">
+                    <i class="bi bi-file-earmark"></i>
+                    <span class="nav-item">Receipt and Payment</span>
+                    <span class="my-tooltip">Receipt and Payment</span>
+                </a>
+
+            </li>
+            <li (click)="setActiveComponent('ledger', 'Ledger')">
+                <a routerLink="/Ledger" routerLinkActive="active">
+                    <i class="pi pi-credit-card"></i>
+                    <span class="nav-item">Ledger</span>
+                    <span class="my-tooltip">Ledger</span>
+                </a>
+
+            </li>
+        </ul>
+    </div>
+    <div class="main-content" [ngClass]="{'full-width': !isSidebarActive}">
+        <h1>{{ selectedTitle }}</h1>
+        <ng-container *ngIf="selectedComponent === 'chartsOfAccount'">
+            <app-charts-of-account></app-charts-of-account>
+        </ng-container>
+        <ng-container *ngIf="selectedComponent === 'standardNarration'">
+            <app-sd-narration></app-sd-narration>
+        </ng-container>
+        <ng-container *ngIf="selectedComponent === 'maintainDocuments'">
+            <app-maintain-docs></app-maintain-docs>
+        </ng-container>
+        <ng-container *ngIf="selectedComponent === 'dayBook'">
+            <app-daybook></app-daybook>
+        </ng-container>
+        <ng-container *ngIf="selectedComponent === 'cashBook'">
+            <app-cash-book></app-cash-book>
+        </ng-container>
+        <ng-container *ngIf="selectedComponent === 'bankBook'">
+            <app-bank-book></app-bank-book>
+        </ng-container>
+        <ng-container *ngIf="selectedComponent === 'receiptAndPayment'">
+            <app-payment></app-payment>
+        </ng-container>
+        <ng-container *ngIf="selectedComponent === 'ledger'">
+            <app-ledger></app-ledger>
+        </ng-container>
+
+    </div>
+</div>

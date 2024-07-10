@@ -1,0 +1,46 @@
+<div>
+    <div class="header-button" style="display: flex; justify-content: right; gap: 8px; border-radius: 50px; margin-bottom: 20px;">
+        <p-button 
+              [icon]="isExpanded ? 'pi pi-minus' : 'pi pi-plus'" 
+              [label]="isExpanded ? 'Collapse All' : 'Expand All'" 
+              (click)="toggleExpandCollapse()" 
+              class="mr-2 custom_button">
+        </p-button>
+    </div>
+
+    <div class="card">  
+        <p-toast /> 
+        <p-treeTable #tt [value]="files" [columns]="cols" selectionMode="single" [(selection)]="selectedNode"
+            dataKey="name" (onNodeSelect)="nodeSelect($event)" (onNodeUnselect)="nodeSelect($event)"
+            [scrollable]="true" [tableStyle]="{'min-width':'50rem'}" styleClass="p-treetable-gridlines">    
+            <ng-template pTemplate="header"let-columns>
+                
+                <tr>
+                    <th *ngFor="let col of columns" [ttSortableColumn]="col.field">
+                        {{ col.header }}
+                        
+                        
+                        <p-treeTableSortIcon [field]="col.field" />
+                        <!-- <input type="text" pInputText (input)="tt.filter($event.target.value, col.field, 'contains')" placeholder="Search"/> -->
+                        <p-iconField iconPosition="left">
+                            <input type="text" pInputText placeholder='' style="display:flex"/>
+                        </p-iconField>
+                        <!-- <input type="text" pInputText style="display:flex" /> -->
+                    
+                    </th>
+                </tr>
+                
+            </ng-template>
+            <ng-template pTemplate="body" let-rowNode let-rowData="rowData" let-columns="columns">
+                <tr [ttRow]="rowNode" [ttSelectableRow]="rowNode">
+                    <td *ngFor="let col of columns; let i = index">
+                        <p-treeTableToggler [rowNode]="rowNode" *ngIf="i === 0" />
+                        {{ rowData[col.field] }}
+                    </td>
+                </tr>
+            </ng-template>
+            
+        </p-treeTable>
+    </div>
+</div>
+

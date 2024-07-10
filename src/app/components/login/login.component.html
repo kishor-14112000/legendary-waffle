@@ -1,0 +1,55 @@
+<div class="overall">
+    <main #mainContainer>
+        <div class="box">
+            <div class="inner-box">
+                <div class="forms-wrap">
+
+                    <form autocomplete="off" class="sign-in-form">
+                        <div class="w-12">
+                            <img [src]="company_logo" alt="k_logo" class="rounded-[10px] bg-[#014388] p-2">
+                        </div>
+                        <div class="heading text-3xl font-medium">
+                            <h2>Welcome Back Buddy!</h2>
+                        </div>
+
+                        <div class="actual-form">
+                            <div class="input-wrap">
+                                <p-dropdown class="input-field" [options]="cities" [(ngModel)]="selectedCity"
+                                    optionLabel="name" placeholder="Select Role" name="role"></p-dropdown>
+                            </div>
+
+                            <div class="input-wrap">
+                                <input type="text" minlength="4" #inputField class="input-field" autocomplete="off"
+                                    required />
+                                <label>Name</label>
+                            </div>
+
+                            <div class="input-wrap">
+                                <input type="{{ showPassword ? 'text' : 'password' }}" id="password1" name="password1"
+                                    [(ngModel)]="password" [ngModelOptions]="{standalone: true}" minlength="4"
+                                    class="input-field" autocomplete="off" required>
+                                <label>Password</label>
+                                <button type="button" id="toggle-password" class="toggle-password"
+                                    (click)="togglePassword()">
+                                    <i [ngClass]="showPassword ? 'pi pi-eye' : 'pi pi-eye-slash'"></i>
+                                </button>
+                            </div>
+
+                            <input type="submit" value="login" class="sign-btn" routerLink="/sidebar" />
+                            <p class="text">
+                                Forgot Password <a href="#">Get help</a>
+                            </p>
+                        </div>
+                    </form>
+                    <!-- SIGNUP START -->
+                </div>
+
+                <div class="carousel">
+                    <div class="images-wrapper">
+                        <img src="assets/images/new_course.gif" class="image img-1 show" alt="course image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
