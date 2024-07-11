@@ -23,6 +23,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "assets": [
+              "src/assets",
+              "src/favicon.ico",
+              "src/assets/images",
+              "src/app/logo_image.jpeg",
+              "src/app/new_course.gif",
+              "src/app/person.gif"
+            ],
             "outputPath": "dist/project-a",
             "index": "src/index.html",
             "browser": "src/main.ts",
@@ -37,22 +45,11 @@
               "src/styles.css",
               "src/assets/vendor/bootstrap/css/bootstrap.min.css",
               "src/assets/vendor/bootstrap-icons/bootstrap-icons.css", 
-              "src/assets/vendor/boxicons/css/boxicons.min.css",
-              "src/assets/vendor/quill/quill.snow.css",
-              "src/assets/vendor/quill/quill.bubble.css",
-              "src/assets/vendor/remixicon/remixicon.css",
-              "src/assets/vendor/simple-datatables/style.css", 
+              "src/assets/vendor/boxicons/css/boxicons.min.css", 
               "src/assets/vendor/bootstrap/css/bootstrap.min.css"
             ],
             "scripts": [
-              "src/assets/vendor/apexcharts/apexcharts.min.js",
-              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js",
-              "src/assets/vendor/chart.js/chart.umd.js",
-              "src/assets/vendor/echarts/echarts.min.js",
-              "src/assets/vendor/quill/quill.js",
-              "src/assets/vendor/simple-datatables/simple-datatables.js",
-              "src/assets/vendor/tinymce/tinymce.min.js",
-              "src/assets/vendor/php-email-form/validate.js"
+              "src/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
             ],
             "server": "src/main.server.ts",
             "prerender": true,
@@ -111,8 +108,12 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/assets/images/logo_image.jpeg",
-              "src/assets"
+              "src/assets",
+              "src/favicon.ico",
+              "src/assets/images",
+              "src/app/logo_image.jpeg",
+              "src/app/new_course.gif",
+              "src/app/person.gif"
             ],
             "styles": [
               "src/styles.css",
