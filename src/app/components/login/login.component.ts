@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
 // Image import here
-import { company_logo } from '../../../assets';
+// import { company_logo } from '../../../assets';
 
 // Interfaces
 interface City {
@@ -20,10 +20,10 @@ interface City {
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.less']
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public company_logo = company_logo; // Company logo image
+  // public company_logo = company_logo; // Company logo image
   public company_name = "Account's Project";
   public email!: string;
   public inputs!: NodeListOf<HTMLInputElement>;
